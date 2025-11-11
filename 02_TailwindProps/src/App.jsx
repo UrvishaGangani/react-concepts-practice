@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import './App.css'
+import './App.css';
 import Card from './components/Card';
+import ThemeController from './components/ThemeController';
 
 function App() {
   let allCardDetail = [{
@@ -27,13 +28,16 @@ function App() {
     totalviews:500    
   }]
   return (
-    <>      
-        <div className="min-h-screen bg-red-100 flex flex-wrap justify-left gap-4 p-4">
+    <>    
+       <div className="min-h-screen px-8 pb-24 pt-4">
+        <ThemeController />
+
+        <div className="max-w-8xl mx-auto flex flex-wrap justify-start gap-10">
           {allCardDetail.map((card, index) => (
-            // <Card key={index} cardProps={card} />
             <Card key={index} {...card} />
           ))}
-        </div>      
+        </div>
+      </div>
     </>
   );
 }
